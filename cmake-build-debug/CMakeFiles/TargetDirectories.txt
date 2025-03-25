@@ -1,0 +1,3 @@
+C:/Users/chilo/CLionProjects/SemestralProject/cmake-build-debug/CMakeFiles/SemesterProject.dir
+C:/Users/chilo/CLionProjects/SemestralProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/chilo/CLionProjects/SemestralProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
