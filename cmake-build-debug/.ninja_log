@@ -1,13 +1,6 @@
 # ninja log v6
-6	1637	7646288456494584	build.ninja	84a0757c5e34c5b2
-10	575	7645338287616086	CMakeFiles/SemesterProject.dir/src/Municipality.cpp.obj	1873c05622c661b3
-12	1089	7640266970036038	CMakeFiles/SemesterProject.dir/src/Filters.cpp.obj	6fa172bab240d663
-3568	3884	7646276738202910	SemesterProject.exe	a2eafa634641bc2b
-7	3567	7646276702589863	CMakeFiles/SemesterProject.dir/src/main.cpp.obj	46ecd8b67774b0ad
-10	1300	7646254400425939	CMakeFiles/SemesterProject.dir/src/DataLoader.cpp.obj	73ca35a5851a2643
-8	803	7646206880889400	CMakeFiles/SemesterProject.dir/src/MunicipalityProcessor.cpp.obj	2827075c25b677d7
-3	327	7646288456494584	build.ninja	84a0757c5e34c5b2
-13	1127	7646288457203214	CMakeFiles/SemesterProject.dir/src/MunicipalityProcessor.cpp.obj	2827075c25b677d7
+3	327	7646917541903672	build.ninja	84a0757c5e34c5b2
+3740	4074	7646910875363842	SemesterProject.exe	a2eafa634641bc2b
+12	3739	7646910838099748	CMakeFiles/SemesterProject.dir/src/main.cpp.obj	46ecd8b67774b0ad
 8	1147	7646288457151906	CMakeFiles/SemesterProject.dir/src/DataLoader.cpp.obj	73ca35a5851a2643
-3	3387	7646288457110819	CMakeFiles/SemesterProject.dir/src/main.cpp.obj	46ecd8b67774b0ad
-3387	3689	7646288490945018	SemesterProject.exe	a2eafa634641bc2b
+13	1127	7646288457203214	CMakeFiles/SemesterProject.dir/src/MunicipalityProcessor.cpp.obj	2827075c25b677d7

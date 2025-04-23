@@ -3,22 +3,11 @@
 #include "MunicipalityProcessor.h"
 #include "Predicates.h"
 #include <Windows.h>
-#include <locale>
 
 void setupUtf8() {
-    // Set the console to use UTF-8 code page (65001) for input and output
+    // Set the console to use UTF-8 code page (65001) for input and output unicode characters are used
     SetConsoleOutputCP(65001);
     SetConsoleCP(65001);
-
-    // Set the global locale to a German locale with UTF-8 support
-    try {
-        std::locale::global(std::locale("de_DE.UTF-8"));
-        std::cin.imbue(std::locale());
-        std::cout.imbue(std::locale());
-    } catch (const std::exception &e) {
-        std::ofstream logFile("../data/error_log.txt", std::ios_base::app);
-        logFile << "Error setting UTF-8 locale: " << e.what() << std::endl;
-    }
 }
 
 int getValidYear() {
@@ -36,10 +25,10 @@ int getValidYear() {
 
 int main() {
     setupUtf8();
-
     std::vector<std::string> files = {
         "../data/2020.csv", "../data/2021.csv", "../data/2022.csv", "../data/2023.csv", "../data/2024.csv"
     };
+    
     std::vector<Municipality> allMunicipalities;
 
     for (const auto &file: files) {
@@ -59,7 +48,7 @@ int main() {
     std::vector<Municipality> filteredMunicipalities = allMunicipalities;
     int choice;
     std::string name;
-    int maxResidents, minResidents;
+    int maxResidents, minResidents,year;
     std::function<bool(const Municipality &)> predicate;
 
     while (true) {
@@ -76,10 +65,8 @@ int main() {
         std::cout << "7. Name + Max residents + Min residents\n";
         std::cout << "8. Quit\n";
         std::cin >> choice;
-        int year;
         if (choice == 8) break;
         if (choice != 1)year = getValidYear();
-
 
         switch (choice) {
             case 1:
@@ -150,9 +137,13 @@ int main() {
         for (const auto &m: filteredMunicipalities) {
             std::cout << "Municipality: " << m.name_ << " | Code: " << m.cityCode << std::endl;
             for (int i = 0; i < m.malePopulation.size(); i++) {
-                std::cout << " | Population " << 2020 + i << ": " << m.malePopulation[i] + m.femalePopulation[i] <<
-                        std::endl;
+                std::cout << " | Year: " << (2020 + i)
+                        << " | Total Population: " << (m.malePopulation[i] + m.femalePopulation[i])
+                        << " | Men: " << m.malePopulation[i]
+                        << " | Women: " << m.femalePopulation[i]
+                        << std::endl;
             }
+            std::cout  << "------------------------------------------------------------------" << std::endl;
         }
         std::cout << "Result of filter : " << filteredMunicipalities.size() << std::endl;
         std::cout << "Continue ?\n";
