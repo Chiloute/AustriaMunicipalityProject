@@ -1,6 +1,0 @@
-# ninja log v6
-3	327	7646917541903672	build.ninja	84a0757c5e34c5b2
-3740	4074	7646910875363842	SemesterProject.exe	a2eafa634641bc2b
-12	3739	7646910838099748	CMakeFiles/SemesterProject.dir/src/main.cpp.obj	46ecd8b67774b0ad
-8	1147	7646288457151906	CMakeFiles/SemesterProject.dir/src/DataLoader.cpp.obj	73ca35a5851a2643
-13	1127	7646288457203214	CMakeFiles/SemesterProject.dir/src/MunicipalityProcessor.cpp.obj	2827075c25b677d7
