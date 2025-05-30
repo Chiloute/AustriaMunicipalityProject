@@ -1,14 +1,14 @@
 
 #ifndef PREDICATES_H
 #define PREDICATES_H
-#include "Municipality.h"
 #include <string>
 #include <functional>
+#include "Territorial.h"
 
 // Prédicat : vérifie si le nom de la municipalité contient une sous-chaîne
 inline auto containsStr(const std::string& str) {
     return [str](const Municipality& m) {
-        return m.name_.find(str) != std::string::npos;
+        return m.name.find(str) != std::string::npos;
     };
 }
 
@@ -16,8 +16,7 @@ inline auto containsStr(const std::string& str) {
 inline auto hasMaxResidents(int year, int maxPop) {
     return [year, maxPop](const Municipality& m) {
         int index = year - 2020;
-        return (index >= 0 && index < m.malePopulation.size()) &&
-               ((m.malePopulation[index] + m.femalePopulation[index]) <= maxPop);
+        return m.getTotalPopulation(index) <= maxPop;
     };
 }
 
@@ -25,8 +24,13 @@ inline auto hasMaxResidents(int year, int maxPop) {
 inline auto hasMinResidents(int year, int minPop) {
     return [year, minPop](const Municipality& m) {
         int index = year - 2020;
-        return (index >= 0 && index < m.malePopulation.size()) &&
-               ((m.malePopulation[index] + m.femalePopulation[index]) >= minPop);
+        return m.getTotalPopulation(index)>= minPop;
     };
 }
+
+inline bool hasType(const TerritorialUnit* unit, TerritorialUnitType type) {
+    return unit->type_ == type;
+}
+
+
 #endif //PREDICATES_H

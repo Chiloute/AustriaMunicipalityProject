@@ -6,3 +6,6 @@
 /build
 /out/build/x64-Debug
 /SemestralProjectFinal.zip
+/cmake-build-debug
+.idea/
+/out
