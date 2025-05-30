@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/cmake-build-release
+/build
+/out/build/x64-Debug
+/SemestralProjectFinal.zip
